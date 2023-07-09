@@ -14,8 +14,10 @@
 
 
 <script setup>
-import requestUtil from '@/utils/request'
-
+import Menu from '@/layout/menu'
+import Header from '@/layout/header'
+import Footer from '@/layout/footer'
+import Tabs from '@/layout/tabs'
 
 
 </script>
