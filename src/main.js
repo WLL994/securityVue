@@ -6,6 +6,8 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import '@/assets/styles/reset.css'
 import '@/assets/styles/border.css'
+import '@/router/permission.js'
+
 import SvgIcon from '@/icons'
 
 

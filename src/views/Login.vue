@@ -94,7 +94,12 @@
         let data =result.data
         if(data.code === 200){
           const token =data.authorization
+          const menuList=data.menuList
+          const currentUser=data.currentUser
+          // console.log("menuList="+menuList);
+          store.commit('SET_MENULIST',menuList)
           store.commit('SET_TOKEN',token)
+          store.commit("SET_USERINFO",currentUser)
           router.replace("/")
         }else{
           ElMessage.error(data.msg)

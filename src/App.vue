@@ -4,6 +4,29 @@
 <!--  <el-button type="danger" @click="handleUserList">测试获取用户请求</el-button>-->
 </template>
 <script setup>
+import store from '@/store'
+import { ref ,watch} from 'vue'
+import { useRoute,useRouter } from 'vue-router'
+const route=useRoute();
+const router=useRouter();
+const whitePath=['/login','/index','/']
+
+
+watch(route,(to,from)=>{
+  console.log("to"+to.name)
+  console.log(to.path)
+
+  if (whitePath.indexOf(to.path)===-1) {
+    console.log("to.path="+to.path)
+    let obj = {
+      name: to.name,
+      path: to.path
+    }
+
+    store.commit("ADD_TABS", obj)
+  }
+
+},{deep:true,immediate:true})
   /*import requestUtil from "@/utils/request";
   import store from "@/store";
   import app from "@/App.vue";
